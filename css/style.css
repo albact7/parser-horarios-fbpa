@@ -3,31 +3,18 @@ body {
     font-family: 'Verdana', sans-serif;
     font-size: 13px;
     font-weight: 400;
-    color: #001F96;
     overflow-x: hidden;
+    color: #001F96;
     padding: 2vw;
     background-color: white;
 }
 
+.font-color {
+    color: #001F96;
+}
+
 img {
     max-width: 100%;
-}
-
-TABLE {
-    width: 100%;
-}
-
-TABLE TR TH {
-    background: #fbc212;
-    color: #fff;
-    padding: 15px 10px;
-    text-align: left;
-}
-
-TABLE TR TD {
-    background: #fff;
-    padding: 5px;
-    font-family: 'Verdana', sans-serif;
 }
 
 p.datos .fecha {
@@ -100,11 +87,13 @@ p.datos .hora {
 }
 
 .info_partidoA {
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255);
+    opacity: 0.95;
 }
 
 .info_partidoB {
-    background-color: rgba(191, 220, 254, 0.95);
+    background-color: rgba(191, 220, 254);
+    opacity: 0.95;
 }
 
 div.titulocategoria {
@@ -120,17 +109,15 @@ p.titulocategoria {
 }
 
 .horariospartidos {
+    background-color: white;
     background-image: url("../img/fondo.PNG");
+}
+
+.fixed-width {
     width: 700px;
-    /*
-    padding: 2%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    */
 }
 
 .categoria {
-    border: 2px solid #001F96;
     padding: 6px;
 }
 
@@ -147,19 +134,6 @@ p.titulocategoria {
     border: 0.2vw solid #001F96;
 }
 
-td:nth-child(2) {
-    width: 150px !important;
-}
-
-img[src="http://82.223.31.134/proyectos/FBPA//fichas/clubes/25mini.jpg"] {
-    background-image: url("escudoJirafa.png");
-    background-repeat: no-repeat;
-    box-sizing: border-box;
-    padding-top: 50px;
-    padding-left: 50px;
-    background-size: 50px;
-}
-
 .estado_partido {
     display: none;
 }
@@ -167,4 +141,64 @@ img[src="http://82.223.31.134/proyectos/FBPA//fichas/clubes/25mini.jpg"] {
 h1 {
     text-align: center;
     margin-bottom: 0;
+}
+
+.button-col {
+    width: 500px !important;
+}
+
+.docpicker {
+    width: 430px !important;
+}
+
+.docpicker-optional {
+    width: 405px !important;
+    font-size: 15px;
+}
+
+.horarios-col {
+    padding-left: 100px;
+}
+
+.horariostitle {
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 30px;
+    text-align: center;
+}
+
+#horariosFull {
+    background-color: white;
+}
+
+.options {
+    border: 1px solid #001F96;
+    padding: 10px;
+    margin: 10px 0px 10px;
+    border-radius: 4px;
+    width: 430px;
+    background-color: rgba(191, 220, 254);
+}
+
+.tooltip {
+    top: -5px;
+    left: 105%;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
 }

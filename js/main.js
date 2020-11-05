@@ -1,8 +1,84 @@
+$(document).ready(function() {
+    $('[data-toggle="tooltip"]').tooltip()
+})
+
 var file = document.getElementById('docpicker')
-var viewer = document.getElementById('dataviewer')
 file.addEventListener('change', importFile);
+var imagebk = document.getElementById('imgpicker')
+imagebk.onchange = function(event) {
+    var files = event.target.files;
+    if (FileReader && files && files.length) {
+        var fr = new FileReader();
+        fr.onloadend = function() {
+            $('#horariospartidos').css('background-image', 'url("' + fr.result + '")');
+        }
+        fr.readAsDataURL(files[0]);
+    }
+}
+
+var imagebanner = document.getElementById('bannerpicker')
+imagebanner.onchange = function(event) {
+    console.log("changebanner")
+    var files = event.target.files;
+    if (FileReader && files && files.length) {
+        var fr = new FileReader();
+        fr.onloadend = function() {
+            $('#imgbanner').attr("src", fr.result);
+            document.getElementById('imgbanner').src = fr.result;
+        }
+        fr.readAsDataURL(files[0]);
+        console.log(fr.result)
+    }
+}
+
+function cssChange() {
+    var title = document.getElementById('title');
+    title.addEventListener('change', cssChange);
+    title = title.value;
+    if (title != "") document.getElementById('horariostitle').textContent = title;
+    var textColor = document.getElementById('textColor');
+    textColor.addEventListener('change', cssChange);
+    textColor = textColor.value;
+    changeColor('font-color', textColor);
+    var row1Color = document.getElementById('row1Color');
+    row1Color.addEventListener('change', cssChange);
+    row1Color = row1Color.value;
+    changeBGColor('info_partidoA', row1Color);
+    var row2Color = document.getElementById('row2Color');
+    row2Color.addEventListener('change', cssChange);
+    row2Color = row2Color.value;
+    changeBGColor('info_partidoB', row2Color);
+    var opacity = document.getElementById('opacity');
+    opacity.addEventListener('change', cssChange);
+    opacity = opacity.value;
+    changeOpacity('info_partidoA', opacity);
+    changeOpacity('info_partidoB', opacity);
+
+}
+
+function changeOpacity(classname, opacity) {
+    var cols = document.getElementsByClassName(classname);
+    for (i = 0; i < cols.length; i++) {
+        cols[i].style.opacity = opacity;
+    }
+}
+
+function changeBGColor(classname, color) {
+    var cols = document.getElementsByClassName(classname);
+    for (i = 0; i < cols.length; i++) {
+        cols[i].style.backgroundColor = color;
+    }
+}
+
+function changeColor(classname, color) {
+    var cols = document.getElementsByClassName(classname);
+    for (i = 0; i < cols.length; i++) {
+        cols[i].style.color = color;
+    }
+}
 
 function importFile(evt) {
+    document.getElementById('horariospartidos').innerHTML = "";
     var f = evt.target.files[0];
 
     if (f) {
@@ -28,17 +104,18 @@ function importFile(evt) {
                 var i = 0
                 for (i = 8; i < strings.length; i += 6) {
                     console.log(i + " " + strings[i + 5].t)
-                    $('#horariospartidos').append('<div class="categoria">' +
-                        '<div class="titulocategoria">' +
-                        '<p class="titulocategoria">' +
+                    $('#horariospartidos').append('<div class="categoria font-color">' +
+                        '<div class="titulocategoria font-color">' +
+                        '<p class="titulocategoria font-color">' +
                         strings[i].t + '</p>' +
                         '</div>' +
-                        '<p id="partido" class="p-partido local">' + strings[i + 1].t + '</p>' +
-                        '<p id="partido" class="p-partido fecha">' + strings[i + 2].t + '</p>' +
-                        '<p id="partido" class="p-partido lugar">' + strings[i + 3].t + '</p>' +
-                        '<p id="partido" class="p-partido visitante">' + strings[i + 5].t + '</p>' +
+                        '<p id="partido" class="p-partido local font-color">' + strings[i + 1].t + '</p>' +
+                        '<p id="partido" class="p-partido fecha font-color">' + strings[i + 2].t + '</p>' +
+                        '<p id="partido" class="p-partido lugar font-color">' + strings[i + 3].t + '</p>' +
+                        '<p id="partido" class="p-partido visitante font-color">' + strings[i + 5].t + '</p>' +
                         '</div>');
                 }
+                cssChange();
             }
         }
         r.readAsBinaryString(f);
@@ -78,27 +155,27 @@ function writeInHTML(partidos) {
             info_partido = "info_partidoB";
         }
         back++;
-        $('#horariospartidos').append('<div class="categoria ' + info_partido + '">' +
+        $('#horariospartidos').append('<div class="categoria ' + info_partido + ' font-color">' +
             '<div class="titulocategoria">' +
-            '<p class="titulocategoria">' +
+            '<p class="titulocategoria font-color">' +
             partidos[i][0] + '</p>' +
             '</div>' +
-            '<div class="row"><p id="partido" class="p-partido local col-3">' + partidos[i][1] + '</p>' +
-            '<p id="partido" class="p-partido visitante col-3">' + partidos[i + 1][0] + '</p>' +
-            '<p id="partido" class="p-partido fecha col-2">' + partidos[i][2] + '</p>' +
-            '<p id="partido" class="p-partido fecha col-2">' + partidos[i + 1][1] + '</p>' +
-            '<p id="partido" class="p-partido pabellon col-2">' + partidos[i][3] + '</p></div>' +
+            '<div class="row"><p id="partido" class="p-partido local col-3 font-color">' + partidos[i][1] + '</p>' +
+            '<p id="partido" class="p-partido visitante col-3 font-color">' + partidos[i + 1][0] + '</p>' +
+            '<p id="partido" class="p-partido fecha col-2 font-color">' + partidos[i][2] + '</p>' +
+            '<p id="partido" class="p-partido fecha col-2 font-color">' + partidos[i + 1][1] + '</p>' +
+            '<p id="partido" class="p-partido pabellon col-2 font-color">' + partidos[i][3] + '</p></div>' +
 
             '</div>');
     }
-
+    cssChange();
 }
 
 $('#printJPG').click(function() {
 
-    var w = document.getElementById("horariospartidos").offsetWidth;
-    var h = document.getElementById("horariospartidos").offsetHeight;
-    html2canvas(document.getElementById("horariospartidos"), {
+    var w = document.getElementById("horariosFull").offsetWidth;
+    var h = document.getElementById("horariosFull").offsetHeight;
+    html2canvas(document.getElementById("horariosFull"), {
         allowTaint: true,
         foreignObjectRendering: true,
         imageSmoothingEnabled: false,
@@ -119,10 +196,11 @@ $('#printJPG').click(function() {
 
 $('#printPDF').click(function() {
 
-    var w = document.getElementById("horariospartidos").offsetWidth;
-    var h = document.getElementById("horariospartidos").offsetHeight;
-    var HTML_Width = $("#horariospartidos").width() * 3;
-    var HTML_Height = $("#horariospartidos").height() * 3;
+    var element = document.getElementById("horariosFull");
+    element.classList.add("fixed-width");
+
+    var HTML_Width = $("#horariosFull").width() * 3;
+    var HTML_Height = $("#horariosFull").height() * 3;
     var top_left_margin = 15;
     if (HTML_Width >= HTML_Height) {
         var PDF_Width = HTML_Width + (top_left_margin * 2);
@@ -133,7 +211,7 @@ $('#printPDF').click(function() {
     }
     var canvas_image_width = HTML_Width;
     var canvas_image_height = HTML_Height;
-    html2canvas(document.getElementById("horariospartidos"), {
+    html2canvas(document.getElementById("horariosFull"), {
         orientation: "landscape",
         allowTaint: true,
         foreignObjectRendering: true,
@@ -145,6 +223,8 @@ $('#printPDF').click(function() {
             var doc = new jsPDF('p', 'pt', [PDF_Width, PDF_Height]);
             doc.addImage(imgData, 'PNG', top_left_margin, top_left_margin, canvas_image_width, canvas_image_height);
             doc.save('horarios.pdf');
+            element.classList.remove("fixed-width");
         }
     });
+
 });
