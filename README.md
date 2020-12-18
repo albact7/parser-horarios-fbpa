@@ -8,12 +8,12 @@
 El pARTseador te permite convertir el PDF suministrado por la Federación de Baloncesto del Principado de Asturias en una foto u otro PDF personalizado con el logo y los colores de tu club, en número de jornada y el baner con tus patrocinadores.
 
 ## Cómo se usa
-1. Descarga el zip con la aplicación haciendo clic aquí <> y descomprímela en tu equipo.
+1. Descarga el zip con la aplicación haciendo clic aquí: <a href="https://github.com/albact7/parser-horarios-fbpa/archive/1.0.zip">DESCARGAR</a> y descomprímela en tu equipo.
 2. Haz doble clic sobre el archivo "pARTseador", se abrirá una ventana de tu navegador predeterminado. 
 Si tu ordenador no reconoce el tipo de archivo o prefieres abrirlo con otro navegador: clic sobre él con botón derecho, "Abrir con" y eliges tu navegador.
 3. Verás en tu navegador algo similar a esto:
 <div align="center">
-  <a href="https://github.com/albact7/parser-horarios-fbpa">
+  <a href="https://github.com/albact7/parser-horarios-fbpa/blob/main/code/tutorial-resources/Captura1.JPG">
     <img src="code/tutorial-resources/Captura1.JPG" alt="cap1" width="auto" height="auto">
   </a>
 </div>
