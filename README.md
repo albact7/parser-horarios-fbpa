@@ -24,11 +24,12 @@ Si tu ordenador no reconoce el tipo de archivo o prefieres abrirlo con otro nave
 4. En la columna de la izquierda se encuentran todas las opciones disponibles de la aplicación, comencemos a personalizar los horarios.
 5. Descarga de la página de la FBPA el archivo XLSX con tus horarios.
 6. Haz clic en "Seleccionar archivo" y selecciona el archivo que acabas de descargar.
-7. En los siguientes recuadros añade la correspondiente información (adjuntamos entre paréntesis los valores por defecto), a la derecha tendrás la previsualización de tus horarios:
+7. En los siguientes recuadros añade la correspondiente información (adjuntamos entre paréntesis los valores por defecto). A la derecha tendrás la previsualización de tus horarios, si no se actualizan los cambios de cualquiera de las opciones, haz clic fuera de los recuadros.
     * Nombre de la jornada (Jornada 1)
     * Color del texto (#001F96)
     * Color 1 de filas(white)
     * Color 2 de filas(rgba(191, 220, 254))
+    * Opacidad (0.95)
     * Fondo de los horarios (Escudo CD Art-Chivo)
     * Banner de publicidad (Colaboradores del CD Art-Chivo)
 8. Descarga tus horarios ya personalizados en JPG o PDF.
