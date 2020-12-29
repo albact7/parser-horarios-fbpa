@@ -23,6 +23,7 @@ Si tu ordenador no reconoce el tipo de archivo o prefieres abrirlo con otro nave
     <img src="code/tutorial-resources/Captura1.JPG" alt="cap1" width="auto" height="auto">
   </a>
 </div>
+
 ## Cómo se usa
 1. En la columna de la izquierda se encuentran todas las opciones disponibles de la aplicación, comencemos a personalizar los horarios.
 2. Descarga de la página de la FBPA el archivo XLSX con tus horarios atención a la [Nota](#nota) comentada anteriormente sobre los posibles errores.
