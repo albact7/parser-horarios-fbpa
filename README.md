@@ -1,9 +1,9 @@
 # Personaliza tus horarios FBPA con el pARTseador
 ## Índice
 
-* [Qué es](#que-es)
-* [Instalación](#instalacion)
-* [Cómo se usa](#como-se-usa)
+* [Qué es](#qué-es)
+* [Instalación](#instalación)
+* [Cómo se usa](#cómo-se-usa)
 
 ## Qué es
 El pARTseador te permite convertir el archivo XLSX ("Excel") suministrado por la Federación de Baloncesto del Principado de Asturias en una foto u otro PDF personalizado con el logo y los colores de tu club, en número de jornada y el baner con tus patrocinadores.
