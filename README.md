@@ -12,7 +12,7 @@ Puedes encontrar el archivo con los partidos de tu club en esta lista: <a href="
 Por problemas en la lectura del archivo XLSX original, es necesario que crees un nuevo archivo de este formato y pegues en él el contenido del suministrado por la FBPA.
 (Aquí está todo el código, si consigues solucionar este problema, una Pull request siempre es bienvenida).
 ## Instalación
-Si utilizas la aplicación desde <a href="https://www.albact.ml/partser/">https://www.albact.ml/partser/</a> no tienes que instalar nada.
+Si utilizas la aplicación desde <a href="https://www.albact.ml/partser/">https://albact7.github.io/partser/</a> no tienes que instalar nada.
 Si quieres descargar la aplicación y utilizarla en un ordenador:
 1. Descarga el zip con la aplicación haciendo clic aquí: <a href="https://github.com/albact7/parser-horarios-fbpa/archive/1.0.zip">DESCARGAR</a> y descomprímela en tu equipo.
 2. Haz doble clic sobre el archivo "pARTseador", se abrirá una ventana de tu navegador predeterminado. 
